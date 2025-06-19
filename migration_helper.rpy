@@ -1,5 +1,5 @@
 ###############################################################################
-# PseudoSaveHelper for Ren'Py
+# MigrationHelper for Ren'Py
 # Copyright (c) 2025 Mispeled
 #
 # Author: Mispeled (https://github.com/snaplemouton)
