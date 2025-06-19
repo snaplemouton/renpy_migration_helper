@@ -3,7 +3,6 @@
 # Copyright (c) 2025 Mispeled
 #
 # Author: Mispeled (https://github.com/snaplemouton)
-# License: MIT
 #
 # Description:
 #     A utility library for Ren'Py visual novels to handle migration of variables
