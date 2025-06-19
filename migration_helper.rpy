@@ -1,3 +1,25 @@
+###############################################################################
+# PseudoSaveHelper for Ren'Py
+# Copyright (c) 2025 Mispeled
+#
+# Author: Mispeled (https://github.com/snaplemouton)
+# License: MIT
+#
+# Description:
+#     A utility library for Ren'Py visual novels to handle migration of variables
+#     across save versions. Stores variables outside of the standard save-pickling
+#     system for safe migration and future-proofing, without polluting the global
+#     namespace.
+#
+# Features:
+#     - Save/load custom variables as JSON-compatible pseudo-vars.
+#     - Automatic migration of pseudo-vars into new global variables when upgrading.
+#     - Designed for easy plug-and-play in any Ren'Py project.
+#
+# Usage:
+#     See the included functions and screens for integrating migration into
+#     your game’s menus.
+###############################################################################
 init python:
     import renpy.store as store
 
@@ -16,7 +38,7 @@ init python:
                 del self._vars[name]
 
         def all_vars(self):
-            return dict(self._vars)  # Copy
+            return dict(self._vars)
 
         def clear(self):
             self._vars.clear()
@@ -70,7 +92,7 @@ screen migrate_slots():
 
             for i in range(gui.file_slot_cols * gui.file_slot_rows):
                 $ slot = i + 1
-                $ slotnumber = FileSlotName(slot, gui.file_slot_cols * gui.file_slot_rows)#FilePageName())
+                $ slotnumber = FileSlotName(slot, gui.file_slot_cols * gui.file_slot_rows)
                 $ slotname = str(math.floor(int(slotnumber) / 6) + 1) + "-" + str(int(slotnumber) % 6)
 
                 button:
@@ -113,8 +135,8 @@ screen migrate_slots():
 default some_value = 0
 label migration_helper_samples():
     $ renpy.say(None, "Our global some_value is: " + str(some_value))
-    $ migration_helper.set_var("some_value", 1) # This will be removed from the save file after migration
-    $ migration_helper.set_var("some_other_value", 2) # This will 
+    $ migration_helper.set_var("some_value", 1)
+    $ migration_helper.set_var("some_other_value", 2)
     "We just added some_value with a value of 1 to our Migration Helper."
     $ renpy.say(None, "Our global some_value is still: " + str(some_value))
     "Save your game."
