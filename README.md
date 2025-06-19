@@ -15,6 +15,15 @@ MigrationHelper lets you store and migrate variables in a way that:
 - Doesn’t clutter your global namespace with unnecessary variables,
 - Enables seamless migration when your game or save system changes.
 
+Here's a table comparing other built-in solutions with the Migration Helper:
+| Feature                    | `store` (default vars) | `persistent` | `jsondb` | `MultiPersistent` | **Migration Helper**     |
+| -------------------------- | ---------------------- | ------------ | -------- | ----------------- | ------------------------ |
+| Per-save data              | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes                    |
+| Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes (once migrated)    |
+| Persistent across sessions | ✅ Yes (per save file)  | ✅ Yes        | ✅ Yes    | ✅ Yes             | ❌ No (cold storage only) |
+| Safe for migrating data    | ❌ No                   | ⚠️ Risky     | ⚠️ Risky | ⚠️ Partial        | ✅ Yes                    |
+| Version upgrade support    | ❌ No                   | ❌ Manual     | ❌ Manual | ⚠️ Manual         |                          |
+
 ## How It Works
 MigrationHelper stores custom variables (with a psv_ prefix) in Ren’Py’s save JSON using config.save_json_callbacks.
 When you update your game and add new globals, you can use migrate_current_save_vars(slot) to migrate a specific save slot.
