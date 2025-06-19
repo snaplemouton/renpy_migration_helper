@@ -22,7 +22,7 @@ Here's a table comparing other built-in solutions with the Migration Helper:
 | Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes     |
 | Persistent across sessions | ✅ Yes (per save file)  | ✅ Yes        | ✅ Yes    | ✅ Yes             | ❌ No (cold storage only) |
 | Safe for migrating data    | ❌ No                   | ⚠️ Risky     | ⚠️ Risky | ⚠️ Partial        | ✅ Yes                    |
-| Version upgrade support    | ❌ No                   | ❌ Manual     | ❌ Manual | ⚠️ Manual         | ✅ Built-in             |
+| Version upgrade support    | ❌ No                   | ❌ Manual     | ❌ Manual | ⚠️ Manual         | ⚠️ Built-in (Might need some tweaking)      |
 
 ## How It Works
 MigrationHelper stores custom variables (with a psv_ prefix) in Ren’Py’s save JSON using config.save_json_callbacks.
