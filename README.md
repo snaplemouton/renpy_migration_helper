@@ -19,7 +19,7 @@ Here's a table comparing other built-in solutions with the Migration Helper:
 | Feature                    | `store` (default vars) | `persistent` | `jsondb` | `MultiPersistent` | **Migration Helper**     |
 | -------------------------- | ---------------------- | ------------ | -------- | ----------------- | ------------------------ |
 | Per-save data              | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes                    |
-| Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes (once migrated)    |
+| Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes     |
 | Persistent across sessions | ✅ Yes (per save file)  | ✅ Yes        | ✅ Yes    | ✅ Yes             | ❌ No (cold storage only) |
 | Safe for migrating data    | ❌ No                   | ⚠️ Risky     | ⚠️ Risky | ⚠️ Partial        | ✅ Yes                    |
 | Version upgrade support    | ❌ No                   | ❌ Manual     | ❌ Manual | ⚠️ Manual         |                          |
