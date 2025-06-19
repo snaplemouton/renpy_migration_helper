@@ -36,5 +36,5 @@ Do whatever you want with it.
 Credit is appreciated but not required.
 
 ## Credits
-Written by Mispeled (github.com/snaplemouton)
+Written by Mispeled (https://github.com/snaplemouton)
 Special thanks to ChatGPT because I'm too lazy to write a README
