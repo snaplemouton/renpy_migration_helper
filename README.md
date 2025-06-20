@@ -2,6 +2,11 @@
 A utility library for Ren’Py that provides future-proof variable migration support.
 Created by Mispeled.
 
+## Do not use this library unless you plan on updating it
+Migration Helper isn't rollback compliant, therefore using it is not recommended unless you plan on updating the code to make it rollback compliant.
+The only way I can personally think of doing it in the current version of Ren'py is by creating a custom rollback system that works in parallel with Ren'py's rollback system.
+Which is more work than it's worth. Just use a better Game Engine at that point.
+
 ## Features
 Migration of variables to new global variables after game updates.
 
@@ -19,7 +24,7 @@ Here's a table comparing other built-in solutions with the Migration Helper:
 | Feature                    | `store` (default vars) | `persistent` | `jsondb` | `MultiPersistent` | **Migration Helper**     |
 | -------------------------- | ---------------------- | ------------ | -------- | ----------------- | ------------------------ |
 | Per-save data              | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes                    |
-| Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ✅ Yes     |
+| Supports rollback          | ✅ Yes                  | ❌ No         | ❌ No     | ❌ No              | ⚠️ No (Needs a lot of work to make it work)     |
 | Persistent across sessions | ✅ Yes (per save file)  | ✅ Yes        | ✅ Yes    | ✅ Yes             | ❌ No (cold storage only) |
 | Safe for migrating data    | ❌ No                   | ⚠️ Risky     | ⚠️ Risky | ⚠️ Partial        | ✅ Yes                    |
 | Version upgrade support    | ❌ No                   | ❌ Manual     | ❌ Manual | ⚠️ Manual         | ⚠️ Built-in (Might need some tweaking)      |
